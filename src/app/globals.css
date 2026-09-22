@@ -1,0 +1,439 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+:root {
+  /* Existing Variables */
+
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* ==========================
+      Website Theme Variables
+     ========================== */
+
+  /* Primary */
+  --theme-primary: #fda20f;
+
+  /* Secondary */
+  --theme-secondary: #05144b;
+
+  /* Hover */
+  --theme-hover: #0c2fb1;
+
+  /* Text */
+  --theme-text-primary: #05144b;
+  --theme-text-secondary: #fda20f;
+
+  /* Border */
+  --theme-border: #051449;
+
+  /* White */
+  --theme-white: #ffffff;
+
+  /* Gradient */
+  --theme-gradient-start: #05144b;
+  --theme-gradient-end: #0c2fb1;
+
+  /* Search Bar */
+  --theme-search-bar-background: #dbe9ff;
+  --theme-search-bar-button-background: #0c5863;
+
+  /* Footer */
+  --theme-footer-background: #e8edff;
+  --theme-footer-text: #000000;
+
+  /* Website */
+  --theme-website-background: #ffffff;
+
+  /* Border Gradient */
+  --theme-border-gradient-start: #72c0f0;
+  --theme-border-gradient-end: #0f6a75;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: var(--font-roboto), sans-serif;
+}
+
+:where(.css-dev-only-do-not-override-xogyor).ant-modal .ant-modal-container {
+  position: relative;
+  background-color: var(--ant-modal-content-bg);
+  background-clip: padding-box;
+  border: 0;
+  border-radius: var(--ant-border-radius-lg);
+  box-shadow: var(--ant-box-shadow);
+  pointer-events: auto;
+  padding: 0 !important;
+}
+
+/* Ant Input Override */
+.ant-input {
+  border: 1px solid #d1d5db !important;
+  box-shadow: none !important;
+}
+
+.ant-input:focus,
+.ant-input-focused {
+  border-color: #4a9bb5 !important;
+  box-shadow: 0 0 0 2px rgba(74, 155, 181, 0.15) !important;
+}
+
+/* Gradient Theme */
+.gradient-primary {
+  background: linear-gradient(180deg, #72c0f0 0%, #0f6a75 100%);
+}
+
+/* Thin Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+}
+
+.guest-popover {
+  z-index: 999999 !important;
+}
+
+.guest-popover .ant-popover-inner {
+  border-radius: 18px !important;
+  padding: 16px !important;
+}
+
+/* BOOKING RADIO THEME */
+
+.booking-radio .ant-radio-wrapper {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.booking-radio .ant-radio .ant-radio-inner {
+  border-color: #72c0f0 !important;
+  background: #fff !important;
+}
+
+/* HOVER */
+.booking-radio .ant-radio-wrapper:hover .ant-radio-inner,
+.booking-radio .ant-radio:hover .ant-radio-inner {
+  border-color: #0f6a75 !important;
+}
+
+/* CHECKED */
+.booking-radio .ant-radio-checked .ant-radio-inner {
+  border-color: #0f6a75 !important;
+  background-color: #0f6a75 !important;
+}
+
+/* DOT */
+.booking-radio .ant-radio-checked .ant-radio-inner::after {
+  background-color: #fff !important;
+  transform: scale(0.5);
+}
+
+/* RIPPLE */
+.booking-radio .ant-radio-checked::after {
+  border-color: #0f6a75 !important;
+}
+
+.mmt-gallery-modal {
+  top: 0 !important;
+}
+
+.mmt-gallery-modal .ant-modal {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mmt-gallery-modal .ant-modal-content {
+  background: #000 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.mmt-gallery-modal .ant-modal-body {
+  background: #000 !important;
+  padding: 0 !important;
+}
+
+.mmt-gallery-modal .ant-modal-close {
+  display: none;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-slide > div {
+  height: 100%;
+}
+
+.ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  box-shadow: none !important;
+}
+
+/* Desktop */
+.premium-hotel-calendar {
+  max-width: 720px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .premium-hotel-calendar {
+    width: 95vw !important;
+    max-width: 95vw !important;
+  }
+
+  .premium-hotel-calendar .ant-picker-panels {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .premium-hotel-calendar .ant-picker-panel {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .premium-hotel-calendar {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: 100vw !important;
+    max-width: 90vw !important;
+    padding: 0px !important;
+    border-radius: 12px;
+  }
+
+  .premium-hotel-calendar .ant-picker-panels {
+    flex-direction: column;
+  }
+
+  .premium-hotel-calendar .ant-picker-panel {
+    width: 100%;
+  }
+
+  .premium-hotel-calendar .ant-picker-content th,
+  .premium-hotel-calendar .ant-picker-content td {
+    width: 36px;
+    height: 20px !important;
+    font-size: 12px !important;
+  }
+}
+
+.ant-picker-dropdown {
+  margin-top: 8px !important;
+}
+
+.premium-hotel-calendar .ant-picker-footer {
+  position: absolute;
+  top: 16px !important;
+  right: 7px;
+  border: none !important;
+  padding: 0 !important;
+  z-index: 100;
+}
+
+.premium-hotel-calendar .ant-picker-footer-extra {
+  margin: 0 !important;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+}
+
+.scrollbar-hide {
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-x: contain !important;
+}
+
+/* =========================================================
+   GIFT CARD SWIPER
+========================================================= */
+
+.gift-card-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gift-card-swiper .swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.gift-card-swiper .swiper-slide {
+  height: auto;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 639px) {
+  .gift-card-swiper {
+    padding: 0 2px;
+  }
+}
+
+/* ==========================================================================
+   WEBSITE THEME
+   ========================================================================== */
+
+/* Text */
+
+.teb-text-color {
+  color: var(--theme-primary);
+}
+
+.most-text-color {
+  color: var(--theme-text-primary) !important;
+}
+.most-text-color {
+  color: var(--theme-text-primary) !important;
+}
+
+.header-hover-most-text-color:hover {
+  color: var(--theme-text-primary) !important;
+}
+.footer-hover-most-text-color:hover {
+  color: var(--theme-text-secondary) !important;
+}
+/* Background */
+
+.teb-boder-colour {
+  background-color: var(--theme-primary);
+}
+
+.buttion-background-color {
+  background-color: var(--theme-secondary);
+}
+
+.buttion-background-color.ant-btn {
+  background-color: var(--theme-secondary) !important;
+  border-color: var(--theme-secondary) !important;
+  color: var(--theme-white) !important;
+}
+
+.buttion-background-color.ant-btn:hover,
+.buttion-background-color.ant-btn:focus,
+.buttion-background-color.ant-btn:active {
+  background: var(--theme-hover) !important;
+  background-color: var(--theme-hover) !important;
+  border-color: var(--theme-hover) !important;
+  color: var(--theme-white) !important;
+}
+
+.box-background-color {
+  background-color: var(--theme-secondary);
+}
+
+.background-color:hover {
+  background-color: var(--theme-secondary) !important;
+}
+.buttion-color:hover {
+colour: var(--theme-secondary) !important;
+boder: var(--theme-secondary) !important;
+
+}
+
+/* Border */
+
+.teb-border-color {
+  border-color: var(--theme-border);
+}
+
+.buttion-border-color {
+  border-color: var(--theme-primary) !important;
+}
+
+/* Gradient */
+
+.teb-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--theme-gradient-start) 0%,
+    var(--theme-gradient-end) 100%
+  );
+}
+
+/* Gradient Border */
+.most-boder-colour,
+.most-boder-colour:hover {
+  border: 1px solid transparent !important;
+
+  background:
+    linear-gradient(var(--theme-white), var(--theme-white)) padding-box,
+    linear-gradient(
+        180deg,
+        var(--theme-border-gradient-start) 0%,
+        var(--theme-border-gradient-end) 100%
+      )
+      border-box !important;
+}
+
+.theme-icon-primary {
+  background-color: var(--theme-primary);
+}
+
+.theme-icon-secondary {
+  background-color: var(--theme-secondary);
+}
+
+.theme-icon-white {
+  background-color: var(--theme-white);
+}
+.background-color-bg {
+  background-color: var(--theme-website-background);
+}
+.footer-backgound-color {
+  background-color: var(--theme-footer-background);
+  color: var(--theme-footer-text);
+}
+.navbar-background-color {
+  background-color: var(--theme-search-bar-background);
+}
+.navbar-buttion-background-color {
+  background-color: var(--theme-search-bar-button-background);
+}
